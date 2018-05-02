@@ -24,3 +24,21 @@
   console.log(a1.sticky, a2.sticky);
 }
 
+{
+  console.log('u-1', /^\uD83D/.test('\uD83D\uDC2A'));
+  console.log('u-2', /^\uD83D/u.test('\uD83D\uDC2A'));
+
+  console.log(/\u{61}/.test('a'));
+  console.log(/\u{61}/u.test('a'));
+
+  console.log(`\u{20BB7}`);
+
+  let s = '𠮷';
+
+  console.log('u-1', /^.$/.test(s));
+  console.log('u-2', /^.$/u.test(s));
+
+  console.log('test-1',/𠮷{2}/.test('𠮷𠮷'));
+  console.log('test-2',/𠮷{2}/u.test('𠮷𠮷'));
+}
+
