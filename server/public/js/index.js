@@ -94,6 +94,7 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 // 数组解构赋值   对象解构赋值   字符串解构赋值
 // 布尔值解构赋值   函数参数解构赋值   数值解构赋值
 
+// 数值解构赋值
 {
   var a = void 0,
       b = void 0,
@@ -224,6 +225,41 @@ function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
   _b8 = _f11.slice(2);
 
   console.log(_a8, _b8);
+}
+
+// 对象解构赋值
+{
+  var o = { p: 42, q: true };
+  var p = o.p,
+      q = o.q;
+
+  console.log(p, q);
+}
+
+{
+  var _a10 = { a: 3 },
+      _a10$a = _a10.a,
+      _a9 = _a10$a === undefined ? 10 : _a10$a,
+      _a10$b = _a10.b,
+      _b9 = _a10$b === undefined ? 5 : _a10$b;
+
+  console.log(_a9, _b9);
+}
+
+{
+  var metaData = {
+    title: 'wcd',
+    test: [{
+      title: 'test',
+      desc: 'description'
+    }]
+  };
+
+  var esTitle = metaData.title,
+      _metaData$test = _slicedToArray(metaData.test, 1),
+      cnTitle = _metaData$test[0].title;
+
+  console.log(esTitle, cnTitle);
 }
 
 /***/ })

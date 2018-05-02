@@ -2,6 +2,7 @@
 // 数组解构赋值   对象解构赋值   字符串解构赋值
 // 布尔值解构赋值   函数参数解构赋值   数值解构赋值
 
+// 数值解构赋值
 {
   let a, b, rest;
   [a, b] = [1, 2];
@@ -69,4 +70,28 @@
   let a, b, c;
   [a, , ...b] = f();
   console.log(a, b);
+}
+
+// 对象解构赋值
+{
+  let o = { p: 42, q: true };
+  let { p, q } = o;
+  console.log(p, q);
+}
+
+{
+  let { a = 10, b = 5 } = { a: 3 };
+  console.log(a, b);
+}
+
+{
+  let metaData = {
+    title: 'wcd',
+    test: [{
+      title: 'test',
+      desc: 'description'
+    }]
+  }
+  let { title: esTitle, test: [{ title: cnTitle }] } = metaData;
+  console.log(esTitle, cnTitle);
 }
