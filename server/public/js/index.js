@@ -100,6 +100,16 @@ __webpack_require__(2);
   // es6
   var regex3 = new RegExp(/xyz/ig, 'i');
   console.log(regex3.flags);
+  // ES6为正则表达式新增了flags属性，会返回正则表达式的修饰符。
+}
+
+{
+  var s = 'bbb_bb_b';
+  var a1 = /b+/g;
+  var a2 = new RegExp('b+', 'y');
+  console.log('one', a1.exec(s), a2.exec(s));
+  console.log('two', a1.exec(s), a2.exec(s));
+  console.log(a1.sticky, a2.sticky);
 }
 
 /***/ })
