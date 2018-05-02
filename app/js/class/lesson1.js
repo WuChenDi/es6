@@ -1,3 +1,5 @@
+// let const
+
 function test() {
   // let 块级作用域
   // for (let i = 1; i < 3; i++) {
