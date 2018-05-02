@@ -89,6 +89,7 @@ __webpack_require__(2);
 // 解构赋值
 // 数组解构赋值   对象解构赋值   字符串解构赋值
 // 布尔值解构赋值   函数参数解构赋值   数值解构赋值
+
 {
   var a = void 0,
       b = void 0,
@@ -97,6 +98,27 @@ __webpack_require__(2);
   b = 2;
 
   console.log(a, b);
+}
+
+{
+  var _a = void 0,
+      _b = void 0,
+      _rest = void 0;
+  _a = 1;
+  _b = 2;
+  _rest = [3, 4, 5, 6];
+
+  console.log(_a, _b, _rest);
+}
+
+{
+  var _a2 = void 0,
+      _b2 = void 0;
+  var _a$b = { a: 1, b: 2 };
+  _a2 = _a$b.a;
+  _b2 = _a$b.b;
+
+  console.log(_a2, _b2);
 }
 
 /***/ })
