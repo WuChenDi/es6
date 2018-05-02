@@ -52,3 +52,21 @@
   [a, , , b] = f();
   console.log(a, b);
 }
+
+{
+  function f() {
+    return [1, 2, 3, 4, 5];
+  }
+  let a, b, c;
+  [a, ...b] = f();
+  console.log(a, b);
+}
+
+{
+  function f() {
+    return [1, 2, 3, 4, 5];
+  }
+  let a, b, c;
+  [a, , ...b] = f();
+  console.log(a, b);
+}

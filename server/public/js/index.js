@@ -88,6 +88,8 @@ __webpack_require__(2);
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+
 // 解构赋值
 // 数组解构赋值   对象解构赋值   字符串解构赋值
 // 布尔值解构赋值   函数参数解构赋值   数值解构赋值
@@ -184,6 +186,44 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   _b6 = _f5[3];
 
   console.log(_a6, _b6);
+}
+
+{
+  var _f6 = function _f6() {
+    return [1, 2, 3, 4, 5];
+  };
+
+  var _a7 = void 0,
+      _b7 = void 0,
+      _c2 = void 0;
+
+  var _f7 = _f6();
+
+  var _f8 = _toArray(_f7);
+
+  _a7 = _f8[0];
+  _b7 = _f8.slice(1);
+
+  console.log(_a7, _b7);
+}
+
+{
+  var _f9 = function _f9() {
+    return [1, 2, 3, 4, 5];
+  };
+
+  var _a8 = void 0,
+      _b8 = void 0,
+      _c3 = void 0;
+
+  var _f10 = _f9();
+
+  var _f11 = _toArray(_f10);
+
+  _a8 = _f11[0];
+  _b8 = _f11.slice(2);
+
+  console.log(_a8, _b8);
 }
 
 /***/ })
