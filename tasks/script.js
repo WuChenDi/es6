@@ -23,7 +23,7 @@ gulp.task('scripts', () => {
       module: {
         loaders: [{
           test: /\.js$/,
-          loader: 'babel'
+          loader: 'babel-loader'
         }]
       }
     }), null, (err, stats) => {
