@@ -4138,6 +4138,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 {
   // ES6提供了Array.includes()函数判断是否包含某一元素，除了不能定位外，解决了indexOf的上述的两个问题。它直接返回true或者false表示是否包含元素，对NaN一样能有有效。
   console.log('number', [1, 2, NaN].includes(1));
+  console.log('number', [1, 2, NaN].includes(NaN));
 }
 
 /***/ }),
