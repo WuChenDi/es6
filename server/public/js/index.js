@@ -4030,6 +4030,16 @@ __webpack_require__(128);
   console.log('25', Number.isInteger(25));
   console.log('25.0', Number.isInteger(25.0));
   console.log('25.1', Number.isInteger(25.1));
+  console.log('25', Number.isInteger('25'));
+}
+
+{
+  // JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。
+  // ES6 引入了Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限。
+  // Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内。
+  console.log(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER);
+  console.log('10', Number.isSafeInteger(10));
+  console.log('a', Number.isSafeInteger('a'));
 }
 
 /***/ }),
