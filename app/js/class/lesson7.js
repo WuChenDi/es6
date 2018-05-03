@@ -40,7 +40,17 @@
 {
   let arrow = v => v * 2;
   console.log('arrow', arrow(3));
-  
+
   let arrow2 = () => 5;
   console.log('arrow2', arrow2());
+}
+
+{
+  function tail(x) {
+    console.log('tail', x);
+  }
+  function fx(x) {
+    return tail(x)
+  }
+  fx(123);
 }

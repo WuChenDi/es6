@@ -4093,6 +4093,18 @@ __webpack_require__(128);
   console.log('arrow2', arrow2());
 }
 
+{
+  var tail = function tail(x) {
+    console.log('tail', x);
+  };
+
+  var fx = function fx(x) {
+    return tail(x);
+  };
+
+  fx(123);
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
