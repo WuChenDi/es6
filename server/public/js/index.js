@@ -4017,6 +4017,21 @@ __webpack_require__(128);
   // Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。
   var arr = Array.of(3, 4, 7, 9, 11);
   console.log('arr=', arr);
+
+  var empty = Array.of();
+  console.log('empty', empty);
+}
+
+{
+  var p = document.querySelectorAll('p');
+  var pArr = Array.from(p);
+  pArr.forEach(function (item) {
+    console.log(item.textContent);
+  });
+
+  console.log(Array.from([1, 3, 5], function (item) {
+    return item * 2;
+  }));
 }
 
 /***/ }),
