@@ -4048,6 +4048,19 @@ __webpack_require__(128);
   console.log(4.9, Math.trunc(4.9));
 }
 
+{
+  /*在ECMAScript6中提供了Math.sign方法，该方法的作用是返回传入参数的符号，指出它是正数，负数，0还是NaN。
+      它有一些如下的特性：
+      1.如果传进来的参数是数字，那么对于正数返回1，对于负数返回-1，对于0直接返回0。
+      2.如果传进来的参数是字符串，而且该字符串可以转换为数字，那么规则同上。
+      3.如果传进来的参数是数组，该数组只有一个元素且这个元素可以转换为数字，那么就返回这个元素的符号类型，规则同上。
+      4.其他的类型通通返回NaN。
+  */
+  console.log('-5', Math.sign(-5));
+  console.log('0', Math.sign(0));
+  console.log('5', Math.sign(5));
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
