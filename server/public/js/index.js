@@ -9674,5 +9674,26 @@ module.exports = function (regExp, replace) {
   }
 }
 
+{
+  var _str = "string";
+  console.log('includes', _str.includes("r"));
+  console.log('includes', _str.includes("c"));
+
+  console.log('start', _str.startsWith('str'));
+  console.log('end', _str.endsWith('str'));
+}
+
+{
+  var _str2 = "abc";
+  console.log(_str2.repeat(2));
+}
+
+{
+  var name = "wuchendi";
+  var info = "hello world";
+  var m = 'i am ' + name + ',' + info;
+  console.log(m);
+}
+
 /***/ })
 /******/ ]);

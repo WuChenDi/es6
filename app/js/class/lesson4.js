@@ -49,3 +49,24 @@
     console.log('es6', code);
   }
 }
+
+{
+  let str = "string";
+  console.log('includes', str.includes("r"));
+  console.log('includes', str.includes("c"));
+
+  console.log('start', str.startsWith('str'));
+  console.log('end', str.endsWith('str'));
+}
+
+{
+  let str = "abc";
+  console.log(str.repeat(2));
+}
+
+{
+  let name = "wuchendi";
+  let info = "hello world";
+  let m = `i am ${name},${info}`;
+  console.log(m);
+}
