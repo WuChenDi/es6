@@ -39,11 +39,40 @@
 
 {
   // ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于遍历数组。它们都返回一个遍历器对象，可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历
+
+  // values() 方法在 Chrome 下面运行会报错未定义（not a function）
+
   for (let index of ['1', 'c', 'ks'].keys()) {
     console.log('keys', index);
   }
 
-  for (let values of ['1', 'c', 'ks'].values()) {
+  for (let values of ['1', 'c', 'ks']) {
     console.log('values', values);
   }
+
+  for (let [index, values] of ['1', 'c', 'ks'].entries()) {
+    console.log('index,values', index, values);
+  }
+}
+
+{
+  // copyWithin函数，用于操作当前数组自身，用来把某些个位置的元素复制并覆盖到其他位置上去
+  /* 
+    Array.prototype.copyWithin(target, start = 0, end = this.length)
+    target：目的起始位置。
+    start：复制源的起始位置，可以省略，可以是负数。
+    end：复制源的结束位置，可以省略，可以是负数，实际结束位置是end-1。
+  */
+  console.log([1, 2, 3, 4, 5].copyWithin(0, 3, 4));
+}
+
+{
+  // 数组实例的find方法，用于找出符合条件的数组的值
+  // 数组实例的findIndex方法，用于找出符合条件的数组下标
+  console.log([1, 2, 3, 4, 5, 6].find(function (item) {
+    return item > 3;
+  }));
+  console.log([1, 2, 3, 4, 5, 6].findIndex(function (item) {
+    return item > 3;
+  }));
 }
