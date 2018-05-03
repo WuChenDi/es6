@@ -84,51 +84,8 @@ __webpack_require__(2);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+// 字符串扩展
 
-
-// 正则扩展
-// 正则新增特性
-// 构造函数的变化   正则方法的扩展    u修饰符   y修饰符   s修饰符
-
-{
-  // es5
-  var regex = new RegExp('xyz', 'i');
-  var regex2 = new RegExp(/xyz/i);
-
-  console.log(regex.test('xyz123'), regex2.test('xyz123'));
-
-  // es6
-  var regex3 = new RegExp(/xyz/ig, 'i');
-  console.log(regex3.flags);
-  // ES6为正则表达式新增了flags属性，会返回正则表达式的修饰符。
-}
-
-{
-  var s = 'bbb_bb_b';
-  var a1 = /b+/g;
-  var a2 = new RegExp('b+', 'y');
-  console.log('one', a1.exec(s), a2.exec(s));
-  console.log('two', a1.exec(s), a2.exec(s));
-  console.log(a1.sticky, a2.sticky);
-}
-
-{
-  console.log('u-1', /^\uD83D/.test('\uD83D\uDC2A'));
-  console.log('u-2', /^(?:\uD83D(?![\uDC00-\uDFFF]))/.test('\uD83D\uDC2A'));
-
-  console.log(/\u{61}/.test('a'));
-  console.log(/a/.test('a'));
-
-  console.log('\uD842\uDFB7');
-
-  var _s = '𠮷';
-
-  console.log('u-1', /^.$/.test(_s));
-  console.log('u-2', /^(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])$/.test(_s));
-
-  console.log('test-1', /𠮷{2}/.test('𠮷𠮷'));
-  console.log('test-2', /(?:\uD842\uDFB7){2}/.test('𠮷𠮷'));
-}
 
 /***/ })
 /******/ ]);
