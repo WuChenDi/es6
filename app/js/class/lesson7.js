@@ -31,3 +31,16 @@
   }
   test3(1, 2, 3, 4, 'a');
 }
+
+{
+  console.log(...[1, 2, 4]);
+  console.log('a', ...[1, 2, 4]);
+}
+
+{
+  let arrow = v => v * 2;
+  console.log('arrow', arrow(3));
+  
+  let arrow2 = () => 5;
+  console.log('arrow2', arrow2());
+}

@@ -4074,6 +4074,25 @@ __webpack_require__(128);
   test3(1, 2, 3, 4, 'a');
 }
 
+{
+  var _console, _console2;
+
+  (_console = console).log.apply(_console, [1, 2, 4]);
+  (_console2 = console).log.apply(_console2, ['a'].concat([1, 2, 4]));
+}
+
+{
+  var arrow = function arrow(v) {
+    return v * 2;
+  };
+  console.log('arrow', arrow(3));
+
+  var arrow2 = function arrow2() {
+    return 5;
+  };
+  console.log('arrow2', arrow2());
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
