@@ -23,10 +23,10 @@
 
   // es6
   console.log('length', s1.length);
-  console.log('code0',s1.codePointAt(0));
-  console.log('code0',s1.codePointAt(0).toString(16));
-  console.log('code1',s1.codePointAt(1));
-  console.log('code2',s1.codePointAt(2));
+  console.log('code0', s1.codePointAt(0));
+  console.log('code0', s1.codePointAt(0).toString(16));
+  console.log('code1', s1.codePointAt(1));
+  console.log('code2', s1.codePointAt(2));
 }
 
 {
@@ -37,5 +37,15 @@
 }
 
 {
+  let str = '\u{20bb7}abc';
 
+  // es5
+  for (let i = 0; i < str.length; i++) {
+    console.log('es5', str[i]);
+  }
+
+  // es6
+  for (let code of str) {
+    console.log('es6', code);
+  }
 }

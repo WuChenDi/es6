@@ -9639,7 +9639,40 @@ module.exports = function (regExp, replace) {
   console.log(String.fromCodePoint("0x20bb7"));
 }
 
-{}
+{
+  var str = '\uD842\uDFB7abc';
+
+  // es5
+  for (var i = 0; i < str.length; i++) {
+    console.log('es5', str[i]);
+  }
+
+  // es6
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = str[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var code = _step.value;
+
+      console.log('es6', code);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+}
 
 /***/ })
 /******/ ]);
