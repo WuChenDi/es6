@@ -4008,137 +4008,20 @@ __webpack_require__(128);
 "use strict";
 
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-// 数值扩展
-// Array.from   Array.of    copyWithin
-// find\findIndex   fill    entries\keys\values
-// inludes
+// 函数扩展
+// 参数默认值   rest参数    扩展运算符
+// 箭头函数   this绑定    尾调用
 
 {
-  // Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。
-  var arr = Array.of(3, 4, 7, 9, 11);
-  console.log('arr=', arr);
+  // 参数默认值
+  var test = function test(x) {
+    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'world';
 
-  var empty = Array.of();
-  console.log('empty', empty);
-}
+    console.log('默认值', x, y);
+  };
 
-{
-  // Array.from() 方法从一个类似数组或可迭代对象中创建一个新的数组实例。
-  var p = document.querySelectorAll('p');
-  var pArr = Array.from(p);
-  pArr.forEach(function (item) {
-    console.log(item.textContent);
-  });
-
-  console.log(Array.from([1, 3, 5], function (item) {
-    return item * 2;
-  }));
-}
-
-{
-  // fill()函数，使用制定的元素填充数组，其实就是用默认内容初始化数组
-  /*
-    arr.fill(value, start, end)
-    value：填充值。
-    start：填充起始位置，可以省略。
-    end：填充结束位置，可以省略，实际结束位置是end-1。
-  */
-  console.log('fill-7', [1, 'a', undefined].fill(7));
-  console.log('fill,pos', ['a', 'b', 'c'].fill(7, 1, 3));
-}
-
-{
-  // ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于遍历数组。它们都返回一个遍历器对象，可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历
-
-  // values() 方法在 Chrome 下面运行会报错未定义（not a function）
-
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = ['1', 'c', 'ks'].keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var index = _step.value;
-
-      console.log('keys', index);
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  var _arr = ['1', 'c', 'ks'];
-  for (var _i = 0; _i < _arr.length; _i++) {
-    var values = _arr[_i];
-    console.log('values', values);
-  }
-
-  var _iteratorNormalCompletion2 = true;
-  var _didIteratorError2 = false;
-  var _iteratorError2 = undefined;
-
-  try {
-    for (var _iterator2 = ['1', 'c', 'ks'].entries()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var _step2$value = _slicedToArray(_step2.value, 2),
-          _index = _step2$value[0],
-          _values = _step2$value[1];
-
-      console.log('index,values', _index, _values);
-    }
-  } catch (err) {
-    _didIteratorError2 = true;
-    _iteratorError2 = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion2 && _iterator2.return) {
-        _iterator2.return();
-      }
-    } finally {
-      if (_didIteratorError2) {
-        throw _iteratorError2;
-      }
-    }
-  }
-}
-
-{
-  // copyWithin函数，用于操作当前数组自身，用来把某些个位置的元素复制并覆盖到其他位置上去
-  /* 
-    Array.prototype.copyWithin(target, start = 0, end = this.length)
-    target：目的起始位置。
-    start：复制源的起始位置，可以省略，可以是负数。
-    end：复制源的结束位置，可以省略，可以是负数，实际结束位置是end-1。
-  */
-  console.log([1, 2, 3, 4, 5].copyWithin(0, 3, 4));
-}
-
-{
-  // 数组实例的find方法，用于找出符合条件的数组的值
-  // 数组实例的findIndex方法，用于找出符合条件的数组下标
-  console.log([1, 2, 3, 4, 5, 6].find(function (item) {
-    return item > 3;
-  }));
-  console.log([1, 2, 3, 4, 5, 6].findIndex(function (item) {
-    return item > 3;
-  }));
-}
-
-{
-  // ES6提供了Array.includes()函数判断是否包含某一元素，除了不能定位外，解决了indexOf的上述的两个问题。它直接返回true或者false表示是否包含元素，对NaN一样能有有效。
-  console.log('number', [1, 2, NaN].includes(1));
-  console.log('number', [1, 2, NaN].includes(NaN));
+  test('hello');
+  test('hello', 'wuchendi');
 }
 
 /***/ }),
