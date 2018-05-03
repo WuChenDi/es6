@@ -31,3 +31,9 @@
   console.log('10', Number.isSafeInteger(10));
   console.log('a', Number.isSafeInteger('a'));
 }
+
+{
+  // Math.trunc() 的执行逻辑很简单，仅仅是删除掉数字的小数部分和小数点，不管参数是正数还是负数。
+  console.log(4.1, Math.trunc(4.1));
+  console.log(4.9, Math.trunc(4.9));
+}
