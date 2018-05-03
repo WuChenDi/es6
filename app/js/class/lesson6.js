@@ -36,3 +36,14 @@
   console.log('fill-7', [1, 'a', undefined].fill(7));
   console.log('fill,pos', ['a', 'b', 'c'].fill(7, 1, 3));
 }
+
+{
+  // ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于遍历数组。它们都返回一个遍历器对象，可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历
+  for (let index of ['1', 'c', 'ks'].keys()) {
+    console.log('keys', index);
+  }
+
+  for (let values of ['1', 'c', 'ks'].values()) {
+    console.log('values', values);
+  }
+}
