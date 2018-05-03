@@ -4023,6 +4023,7 @@ __webpack_require__(128);
 }
 
 {
+  // Array.from() 方法从一个类似数组或可迭代对象中创建一个新的数组实例。
   var p = document.querySelectorAll('p');
   var pArr = Array.from(p);
   pArr.forEach(function (item) {
@@ -4032,6 +4033,18 @@ __webpack_require__(128);
   console.log(Array.from([1, 3, 5], function (item) {
     return item * 2;
   }));
+}
+
+{
+  // fill()函数，使用制定的元素填充数组，其实就是用默认内容初始化数组
+  /*
+    arr.fill(value, start, end)
+    value：填充值。
+    start：填充起始位置，可以省略。
+    end：填充结束位置，可以省略，实际结束位置是end-1。
+  */
+  console.log('fill-7', [1, 'a', undefined].fill(7));
+  console.log('fill,pos', ['a', 'b', 'c'].fill(7, 1, 3));
 }
 
 /***/ }),
