@@ -10,3 +10,24 @@
   test('hello');
   test('hello', 'wuchendi');
 }
+
+{
+  let x = 'test';
+  // function test2(x, y = x) {
+  //   console.log('作用域', x, y);
+  // }
+  function test2(c, y = x) {
+    console.log('作用域', x, y);
+  }
+  // test2();
+  test2('kill');
+}
+
+{
+  function test3(...arg) {
+    for (let v of arg) {
+      console.log('rest', v);
+    }
+  }
+  test3(1, 2, 3, 4, 'a');
+}
