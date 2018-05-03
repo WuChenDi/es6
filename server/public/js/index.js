@@ -4061,6 +4061,12 @@ __webpack_require__(128);
   console.log('5', Math.sign(5));
 }
 
+{
+  // Math.cbrt() 函数返回任意数字的立方根.
+  console.log('-1', Math.cbrt(-1));
+  console.log('8', Math.cbrt(8));
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
