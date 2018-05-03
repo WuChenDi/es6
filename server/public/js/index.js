@@ -9601,6 +9601,10 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
+var _templateObject = _taggedTemplateLiteral(['i am ', ',', ''], ['i am ', ',', '']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 // 字符串扩展
 // 字符串新增特性
 // Unicode表示法    遍历接口
@@ -9699,6 +9703,20 @@ module.exports = function (regExp, replace) {
   // ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
   console.log('1'.padStart(2, '0'));
   console.log('1'.padEnd(2, '0'));
+}
+
+{
+  var abc = function abc(s, v1, v2) {
+    console.log(s, v1, v2);
+    return s + v1 + v2;
+  };
+
+  // 标签模板
+  var user = {
+    name: 'wcd',
+    info: 'hello world'
+  };
+  console.log(abc(_templateObject, user.name, user.info));
 }
 
 /***/ })

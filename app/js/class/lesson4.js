@@ -73,6 +73,19 @@
 
 {
   // ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
-  console.log('1'.padStart(2,'0'));
-  console.log('1'.padEnd(2,'0'));
+  console.log('1'.padStart(2, '0'));
+  console.log('1'.padEnd(2, '0'));
+}
+
+{
+  // 标签模板
+  let user = {
+    name: 'wcd',
+    info: 'hello world'
+  };
+  console.log(abc`i am ${user.name},${user.info}`);
+  function abc(s, v1, v2) {
+    console.log(s, v1, v2);
+    return s + v1 + v2;
+  }
 }
