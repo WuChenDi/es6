@@ -89,3 +89,9 @@
     return s + v1 + v2;
   }
 }
+
+{
+  // String.raw 方法往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。
+  console.log(String.raw`Hi\n${1+2}`);
+  console.log(`Hi\n${1+2}`);
+}

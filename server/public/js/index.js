@@ -9601,7 +9601,8 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
-var _templateObject = _taggedTemplateLiteral(['i am ', ',', ''], ['i am ', ',', '']);
+var _templateObject = _taggedTemplateLiteral(['i am ', ',', ''], ['i am ', ',', '']),
+    _templateObject2 = _taggedTemplateLiteral(['Hi\n', ''], ['Hi\\n', '']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -9717,6 +9718,12 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
     info: 'hello world'
   };
   console.log(abc(_templateObject, user.name, user.info));
+}
+
+{
+  // String.raw 方法往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。
+  console.log(String.raw(_templateObject2, 1 + 2));
+  console.log('Hi\n' + (1 + 2));
 }
 
 /***/ })
