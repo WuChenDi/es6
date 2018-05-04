@@ -96,3 +96,18 @@
   weakmap.set(o, 123);
   console.log(weakmap.get(o));
 }
+
+
+// 数据结构
+// Map与Array的对比
+// Set与Array的对比
+
+{
+  // 数据结构横向对比，增，查，改，删
+  let map = new Map();
+  let array = [];
+  // 增
+  map.set('t', 1);
+  array.push({ t: 1 });
+  console.info('map-array', map, array);
+}

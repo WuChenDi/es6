@@ -4198,6 +4198,20 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   console.log(weakmap.get(o));
 }
 
+// 数据结构
+// Map与Array的对比
+// Set与Array的对比
+
+{
+  // 数据结构横向对比，增，查，改，删
+  var _map2 = new Map();
+  var array = [];
+  // 增
+  _map2.set('t', 1);
+  array.push({ t: 1 });
+  console.info('map-array', _map2, array);
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
