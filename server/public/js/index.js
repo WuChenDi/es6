@@ -4006,10 +4006,37 @@ __webpack_require__(128);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-// 数据结构
-// set的用法    weakset的用法
-// map的用法    weakmap的用法
 
+
+// 数据结构
+// Set的用法    Weakset的用法
+// Map的用法    Weakmap的用法
+
+{
+  var list = new Set();
+  list.add(5);
+  list.add(7);
+  console.log('size', list.size);
+}
+
+{
+  var arr = [1, 2, 3, 4, 5];
+  var _list = new Set(arr);
+  console.log('size', _list.size);
+}
+
+{
+  var _list2 = new Set();
+  _list2.add(1);
+  _list2.add(2);
+  _list2.add(1);
+  console.log('list', _list2);
+
+  // 去重
+  var _arr = [1, 2, 3, 1, 2];
+  var list2 = new Set(_arr);
+  console.log('unique', list2);
+}
 
 /***/ }),
 /* 128 */
