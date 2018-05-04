@@ -81,3 +81,18 @@
   map.set(arr, 456);
   console.log('map', map, map.get(arr));
 }
+
+{
+  let map = new Map([['a', 123], ['b', 456]]);
+  console.log('map args', map);
+  console.log('size', map.size);
+  console.log('delete', map.delete('a'), map);
+  console.log('clear', map.clear(), map);
+}
+
+{
+  let weakmap = new WeakMap();
+  let o = {};
+  weakmap.set(o, 123);
+  console.log(weakmap.get(o));
+}

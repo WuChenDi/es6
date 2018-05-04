@@ -4183,6 +4183,21 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   console.log('map', map, map.get(_arr4));
 }
 
+{
+  var _map = new Map([['a', 123], ['b', 456]]);
+  console.log('map args', _map);
+  console.log('size', _map.size);
+  console.log('delete', _map.delete('a'), _map);
+  console.log('clear', _map.clear(), _map);
+}
+
+{
+  var weakmap = new WeakMap();
+  var o = {};
+  weakmap.set(o, 123);
+  console.log(weakmap.get(o));
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
