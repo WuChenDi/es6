@@ -3,6 +3,7 @@
 // Map的用法    Weakmap的用法
 
 {
+  // 向Set中加入值的时候不会发生类型转换，所以5和”5”是两个不同的值，Set内部判断两个值是否相等，使用的是 ===，这就意味着这两个对象总是不相等。唯一列外的是NaN本身（精确相等运算符认为NaN不等于自身）
   let list = new Set();
   list.add(5);
   list.add(7);
@@ -71,4 +72,12 @@
   // Invalid value used in weak set
   // weakList.add(2);
   console.log('weakList', weakList);
+}
+
+{
+  let map = new Map();
+  let arr = ['123'];
+
+  map.set(arr, 456);
+  console.log('map', map, map.get(arr));
 }

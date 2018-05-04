@@ -4015,6 +4015,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 // Map的用法    Weakmap的用法
 
 {
+  // 向Set中加入值的时候不会发生类型转换，所以5和”5”是两个不同的值，Set内部判断两个值是否相等，使用的是 ===，这就意味着这两个对象总是不相等。唯一列外的是NaN本身（精确相等运算符认为NaN不等于自身）
   var list = new Set();
   list.add(5);
   list.add(7);
@@ -4172,6 +4173,14 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   // Invalid value used in weak set
   // weakList.add(2);
   console.log('weakList', weakList);
+}
+
+{
+  var map = new Map();
+  var _arr4 = ['123'];
+
+  map.set(_arr4, 456);
+  console.log('map', map, map.get(_arr4));
 }
 
 /***/ }),
