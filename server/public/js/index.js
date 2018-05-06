@@ -10504,6 +10504,16 @@ var _zlib = __webpack_require__(149);
     return item.t ? item.t = 2 : '';
   });
   console.info('set_array-modify', set, _array);
+
+  // 删
+  set.forEach(function (item) {
+    return item.t ? set.delete(item) : '';
+  });
+  var _index = _array.findIndex(function (item) {
+    return item.t;
+  });
+  _array.splice(_index, 1);
+  console.info('set-array-empty', set, _array);
 }
 
 /***/ }),

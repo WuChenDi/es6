@@ -150,4 +150,10 @@ import { constants } from "zlib";
   set.forEach(item => item.t ? item.t = 2 : '');
   array.forEach(item => item.t ? item.t = 2 : '');
   console.info('set_array-modify', set, array);
+
+  // 删
+  set.forEach(item => item.t ? set.delete(item) : '');
+  let index = array.findIndex(item => item.t);
+  array.splice(index, 1);
+  console.info('set-array-empty', set, array);
 }
