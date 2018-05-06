@@ -119,6 +119,6 @@
   // 改
   map.set('t', 2);
   array.forEach(item => item.t ? item.t = 2 : '');
-  console.log('map-array-modify', map.array);
+  console.log('map-array-modify', map, array);
 
 }

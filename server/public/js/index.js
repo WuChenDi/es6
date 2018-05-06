@@ -4223,7 +4223,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   array.forEach(function (item) {
     return item.t ? item.t = 2 : '';
   });
-  console.log('map-array-modify', _map2.array);
+  console.log('map-array-modify', _map2, array);
 }
 
 /***/ }),
