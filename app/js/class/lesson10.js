@@ -1,3 +1,5 @@
+import { constants } from "zlib";
+
 // 数据结构
 // Set的用法    Weakset的用法
 // Map的用法    Weakmap的用法
@@ -119,6 +121,11 @@
   // 改
   map.set('t', 2);
   array.forEach(item => item.t ? item.t = 2 : '');
-  console.log('map-array-modify', map, array);
+  console.info('map-array-modify', map, array);
 
+  // 删除
+  map.delete('t');
+  let index = array.findIndex(item => item.t);
+  array.splice(index,1);
+  console.info('map-array-empty', map, array);
 }
