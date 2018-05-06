@@ -110,4 +110,15 @@
   map.set('t', 1);
   array.push({ t: 1 });
   console.info('map-array', map, array);
+
+  // 查
+  let map_exist = map.has('t');
+  let array_exist = array.find(item => item.t);
+  console.info('map-array', map_exist, array_exist);
+
+  // 改
+  map.set('t', 2);
+  array.forEach(item => item.t ? item.t = 2 : '');
+  console.log('map-array-modify', map.array);
+
 }

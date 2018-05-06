@@ -4210,6 +4210,20 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   _map2.set('t', 1);
   array.push({ t: 1 });
   console.info('map-array', _map2, array);
+
+  // 查
+  var map_exist = _map2.has('t');
+  var array_exist = array.find(function (item) {
+    return item.t;
+  });
+  console.info('map-array', map_exist, array_exist);
+
+  // 改
+  _map2.set('t', 2);
+  array.forEach(function (item) {
+    return item.t ? item.t = 2 : '';
+  });
+  console.log('map-array-modify', _map2.array);
 }
 
 /***/ }),
