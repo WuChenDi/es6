@@ -108,6 +108,7 @@ import { constants } from "zlib";
   // 数据结构横向对比，增，查，改，删
   let map = new Map();
   let array = [];
+
   // 增
   map.set('t', 1);
   array.push({ t: 1 });
@@ -123,9 +124,30 @@ import { constants } from "zlib";
   array.forEach(item => item.t ? item.t = 2 : '');
   console.info('map-array-modify', map, array);
 
-  // 删除
+  // 删
   map.delete('t');
   let index = array.findIndex(item => item.t);
-  array.splice(index,1);
+  array.splice(index, 1);
   console.info('map-array-empty', map, array);
+}
+
+{
+  // set和array的对比
+  let set = new Set();
+  let array = [];
+
+  // 增
+  set.add({ t: 1 });
+  array.push({ t: 1 });
+  console.info('set-array', set, array);
+
+  // 查
+  let set_exist = set.has({ t: 1 });
+  let array_exist = array.find(item => item.t);
+  console.info('set_exist', set_exist, array_exist);
+
+  // 改
+  set.forEach(item => item.t ? item.t = 2 : '');
+  array.forEach(item => item.t ? item.t = 2 : '');
+  console.info('set_array-modify', set, array);
 }

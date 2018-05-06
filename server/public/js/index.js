@@ -10450,6 +10450,7 @@ var _zlib = __webpack_require__(149);
   // 数据结构横向对比，增，查，改，删
   var _map2 = new Map();
   var array = [];
+
   // 增
   _map2.set('t', 1);
   array.push({ t: 1 });
@@ -10469,13 +10470,40 @@ var _zlib = __webpack_require__(149);
   });
   console.info('map-array-modify', _map2, array);
 
-  // 删除
+  // 删
   _map2.delete('t');
   var index = array.findIndex(function (item) {
     return item.t;
   });
   array.splice(index, 1);
   console.info('map-array-empty', _map2, array);
+}
+
+{
+  // set和array的对比
+  var set = new Set();
+  var _array = [];
+
+  // 增
+  set.add({ t: 1 });
+  _array.push({ t: 1 });
+  console.info('set-array', set, _array);
+
+  // 查
+  var set_exist = set.has({ t: 1 });
+  var _array_exist = _array.find(function (item) {
+    return item.t;
+  });
+  console.info('set_exist', set_exist, _array_exist);
+
+  // 改
+  set.forEach(function (item) {
+    return item.t ? item.t = 2 : '';
+  });
+  _array.forEach(function (item) {
+    return item.t ? item.t = 2 : '';
+  });
+  console.info('set_array-modify', set, _array);
 }
 
 /***/ }),
