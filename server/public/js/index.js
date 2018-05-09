@@ -4104,7 +4104,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var validator = function validator(target, _validator) {
     return new Proxy(target, {
       _validator: _validator,
-      set: function set(target, key, valueproxy) {
+      set: function set(target, key, value, proxy) {
         if (target.hasOwnProperty(key)) {
           var va = this._validator[key];
           if (!!va(value)) {
@@ -4135,6 +4135,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     this.age = age;
     return validator(this.personValidators);
   };
+
+  var person = new Person('lilei', 30);
+
+  console.info(person);
 }
 
 /***/ }),
