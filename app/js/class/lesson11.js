@@ -79,4 +79,5 @@
   console.log('Reflect get', Reflect.get(obj, 'time'));
   Reflect.set(obj, 'name', 'wuchendi');
   console.log(obj);
+  console.log('has', Reflect.has(obj, 'name'));
 }
