@@ -4008,6 +4008,8 @@ __webpack_require__(128);
 "use strict";
 
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // Proxy和Reflect
 
 // Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。
@@ -4096,6 +4098,43 @@ __webpack_require__(128);
   Reflect.set(_obj, 'name', 'wuchendi');
   console.log(_obj);
   console.log('has', Reflect.has(_obj, 'name'));
+}
+
+{
+  var validator = function validator(target, _validator) {
+    return new Proxy(target, {
+      _validator: _validator,
+      set: function set(target, key, valueproxy) {
+        if (target.hasOwnProperty(key)) {
+          var va = this._validator[key];
+          if (!!va(value)) {
+            return Reflect.set(target, key, value, proxy);
+          } else {
+            throw Error('\u4E0D\u80FD\u8BBE\u7F6E' + key + '\u5230' + value);
+          }
+        } else {
+          throw Error(key + ' \u4E0D\u5B58\u5728');
+        }
+      }
+    });
+  };
+
+  var personValidators = {
+    name: function name(val) {
+      return typeof val === 'string';
+    },
+    age: function age(val) {
+      return typeof val === 'number' && val > 18;
+    }
+  };
+
+  var Person = function Person(name, age) {
+    _classCallCheck(this, Person);
+
+    this.name = name;
+    this.age = age;
+    return validator(this.personValidators);
+  };
 }
 
 /***/ }),
