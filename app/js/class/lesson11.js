@@ -28,6 +28,14 @@
       } else {
         return target[key];
       }
+    },
+    // 拦截key in object操作
+    has(target, key) {
+      if (key === 'name') {
+        return target[key];
+      } else {
+        return false;
+      }
     }
   });
   console.log('get', monitor.time);
@@ -35,4 +43,6 @@
   monitor.time = '2018';
   monitor.name = 'wuchendi';
   console.log('set', monitor.time, monitor);
+
+  console.log('has', 'name' in monitor, 'time' in monitor);
 }
