@@ -4272,6 +4272,27 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   console.info('set-array-empty', set, _array);
 }
 
+{
+  // map,set,objet对比
+  var item = { t: 1 };
+  var _map3 = new Map();
+  var _set = new Set();
+  var obj = {};
+
+  // 增
+  _map3.set('t', 1);
+  _set.add(item);
+  obj['t'] = 1;
+  console.info('map-set-obj', obj, _map3, _set);
+
+  // 查
+  console.info({
+    map_exist: _map3.has('t'),
+    set_exist: _set.has(item),
+    obj_exist: 't' in obj
+  });
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {

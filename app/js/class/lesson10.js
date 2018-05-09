@@ -155,3 +155,24 @@
   array.splice(index, 1);
   console.info('set-array-empty', set, array);
 }
+
+{
+  // map,set,objet对比
+  let item = { t: 1 };
+  let map = new Map();
+  let set = new Set();
+  let obj = {};
+
+  // 增
+  map.set('t', 1);
+  set.add(item);
+  obj['t'] = 1;
+  console.info('map-set-obj', obj, map, set);
+
+  // 查
+  console.info({
+    map_exist: map.has('t'),
+    set_exist:set.has(item),
+    obj_exist: 't' in obj
+  })
+}
