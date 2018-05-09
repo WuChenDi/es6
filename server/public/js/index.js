@@ -4006,8 +4006,27 @@ __webpack_require__(128);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
 // Proxy和Reflect
 
+{
+  var obj = {
+    time: '2017-03-11',
+    name: 'wcd',
+    _r: 123
+  };
+  var monitor = new Proxy(obj, {
+    // 拦截对象属性的读取
+    get: function get(target, key) {
+      return target[key].replace('2017', '2018');
+    },
+
+    // 拦截对象设置属性
+    set: function set(target, key, value) {}
+  });
+  console.log('get', monitor.time);
+}
 
 /***/ }),
 /* 128 */
