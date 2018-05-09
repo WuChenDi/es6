@@ -36,6 +36,15 @@
       } else {
         return false;
       }
+    },
+    // 拦截delete
+    deleteProperty(target, key) {
+      if (key.indexOf('_') > -1) {
+        delete target[key];
+        return true;
+      } else {
+        return target[key];
+      }
     }
   });
   console.log('get', monitor.time);
@@ -45,4 +54,10 @@
   console.log('set', monitor.time, monitor);
 
   console.log('has', 'name' in monitor, 'time' in monitor);
+
+  delete monitor.time;
+  console.log('delete', monitor);
+
+  delete monitor._r;
+  console.log('delete', monitor);
 }
