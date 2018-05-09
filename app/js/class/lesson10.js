@@ -186,5 +186,5 @@
   map.delete('t');
   set.delete(item);
   delete obj['t'];
-  console.info('map-set-obj-delete', obj, map, set);
+  console.info('map-set-obj-empty', obj, map, set);
 }

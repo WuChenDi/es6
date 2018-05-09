@@ -4302,7 +4302,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   _map3.delete('t');
   _set.delete(item);
   delete obj['t'];
-  console.info('map-set-obj-delete', obj, _map3, _set);
+  console.info('map-set-obj-empty', obj, _map3, _set);
 }
 
 /***/ }),
