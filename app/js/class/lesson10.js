@@ -181,4 +181,10 @@
   item.t = 2;
   obj['t'] = 2;
   console.info('map-set-obj-modify', obj, map, set);
+
+  // 删
+  map.delete('t');
+  set.delete(item);
+  delete obj['t'];
+  console.info('map-set-obj-delete', obj, map, set);
 }

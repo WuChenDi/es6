@@ -4297,6 +4297,12 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
   item.t = 2;
   obj['t'] = 2;
   console.info('map-set-obj-modify', obj, _map3, _set);
+
+  // 删
+  _map3.delete('t');
+  _set.delete(item);
+  delete obj['t'];
+  console.info('map-set-obj-delete', obj, _map3, _set);
 }
 
 /***/ }),
