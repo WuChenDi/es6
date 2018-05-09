@@ -4291,6 +4291,12 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
     set_exist: _set.has(item),
     obj_exist: 't' in obj
   });
+
+  // 改
+  _map3.set('t', 2);
+  item.t = 2;
+  obj['t'] = 2;
+  console.info('map-set-obj-modify', obj, _map3, _set);
 }
 
 /***/ }),

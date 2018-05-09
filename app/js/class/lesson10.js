@@ -172,7 +172,13 @@
   // 查
   console.info({
     map_exist: map.has('t'),
-    set_exist:set.has(item),
+    set_exist: set.has(item),
     obj_exist: 't' in obj
   })
+
+  // 改
+  map.set('t', 2);
+  item.t = 2;
+  obj['t'] = 2;
+  console.info('map-set-obj-modify', obj, map, set);
 }
