@@ -4091,6 +4091,8 @@ __webpack_require__(128);
     name: 'wcd',
     _r: 123
   };
+
+  console.log('Reflect get', Reflect.get(_obj, 'time'));
 }
 
 /***/ }),

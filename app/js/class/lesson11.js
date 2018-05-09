@@ -75,4 +75,6 @@
     name: 'wcd',
     _r: 123
   };
+
+  console.log('Reflect get', Reflect.get(obj, 'time'));
 }
