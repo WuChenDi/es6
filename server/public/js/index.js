@@ -4058,8 +4058,16 @@ __webpack_require__(128);
       } else {
         return target[key];
       }
+    },
+
+    // 拦截Object.keys,Object.getOwnPropertySymbols,Object.getOwnPropertyNames
+    ownKeys: function ownKeys(target) {
+      return Object.keys(target).filter(function (item) {
+        return item != 'time';
+      });
     }
   });
+
   console.log('get', monitor.time);
 
   monitor.time = '2018';
@@ -4068,11 +4076,21 @@ __webpack_require__(128);
 
   console.log('has', 'name' in monitor, 'time' in monitor);
 
-  delete monitor.time;
-  console.log('delete', monitor);
+  // delete monitor.time;
+  // console.log('delete', monitor);
 
-  delete monitor._r;
-  console.log('delete', monitor);
+  // delete monitor._r;
+  // console.log('delete', monitor);
+
+  console.log('ownKeys', Object.keys(monitor));
+}
+
+{
+  var _obj = {
+    time: '2017-03-11',
+    name: 'wcd',
+    _r: 123
+  };
 }
 
 /***/ }),
