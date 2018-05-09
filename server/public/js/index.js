@@ -4093,6 +4093,8 @@ __webpack_require__(128);
   };
 
   console.log('Reflect get', Reflect.get(_obj, 'time'));
+  Reflect.set(_obj, 'name', 'wuchendi');
+  console.log(_obj);
 }
 
 /***/ }),
