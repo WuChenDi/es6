@@ -113,10 +113,14 @@
     constructor(name, age) {
       this.name = name;
       this.age = age;
-      return validator(this.personValidators)
+      return validator(this,personValidators)
     }
   }
-  const person = new Person('lilei', 30);
+  const person = new Person('wcd', 22);
 
   console.info(person);
+
+  person.name = 'hht';
+  console.info(person);
+
 }
