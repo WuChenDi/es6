@@ -4165,6 +4165,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     return _Parent7;
   }();
+
+  _Parent7.type = 'test';
+  console.log('静态属性', _Parent7.type);
 }
 
 /***/ }),
