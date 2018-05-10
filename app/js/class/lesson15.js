@@ -1,3 +1,6 @@
+// generator(3-17)
+
+
 // Generator
 // 基本概念
 // next函数的用法
@@ -12,4 +15,11 @@
     yield 'b';
     return 'c'
   };
+
+  let k = tell();
+
+  console.log(k.next());
+  console.log(k.next());
+  console.log(k.next());
+  console.log(k.next());
 }

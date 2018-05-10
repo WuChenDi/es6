@@ -4008,6 +4008,9 @@ __webpack_require__(128);
 "use strict";
 
 
+// generator(3-17)
+
+
 // Generator
 // 基本概念
 // next函数的用法
@@ -4039,6 +4042,13 @@ __webpack_require__(128);
       }
     }, tell, this);
   });
+
+  var k = tell();
+
+  console.log(k.next());
+  console.log(k.next());
+  console.log(k.next());
+  console.log(k.next());
 }
 
 /***/ }),
