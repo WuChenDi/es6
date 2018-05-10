@@ -12,3 +12,31 @@
   let v_parent = new Parent('v');
   console.log('构造函数和实例', v_parent);
 }
+
+{
+  // 继承
+  class Parent {
+    constructor(name = 'wcd') {
+      this.name = name;
+    }
+  }
+  class Child extends Parent {
+
+  }
+  console.log('继承', new Child());
+}
+
+{
+  // 继承传递参数
+  class Parent {
+    constructor(name = 'wcd') {
+      this.name = name;
+    }
+  }
+  class Child extends Parent {
+    constructor(name = 'child') {
+      super(name);
+    }
+  }
+  console.log('继承传递参数', new Child());
+}

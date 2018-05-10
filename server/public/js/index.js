@@ -4008,6 +4008,10 @@ __webpack_require__(128);
 "use strict";
 
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // 类
@@ -4026,6 +4030,58 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   var v_parent = new Parent('v');
   console.log('构造函数和实例', v_parent);
+}
+
+{
+  // 继承
+  var _Parent = function _Parent() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'wcd';
+
+    _classCallCheck(this, _Parent);
+
+    this.name = name;
+  };
+
+  var Child = function (_Parent2) {
+    _inherits(Child, _Parent2);
+
+    function Child() {
+      _classCallCheck(this, Child);
+
+      return _possibleConstructorReturn(this, (Child.__proto__ || Object.getPrototypeOf(Child)).apply(this, arguments));
+    }
+
+    return Child;
+  }(_Parent);
+
+  console.log('继承', new Child());
+}
+
+{
+  // 继承传递参数
+  var _Parent3 = function _Parent3() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'wcd';
+
+    _classCallCheck(this, _Parent3);
+
+    this.name = name;
+  };
+
+  var _Child = function (_Parent4) {
+    _inherits(_Child, _Parent4);
+
+    function _Child() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'child';
+
+      _classCallCheck(this, _Child);
+
+      return _possibleConstructorReturn(this, (_Child.__proto__ || Object.getPrototypeOf(_Child)).call(this, name));
+    }
+
+    return _Child;
+  }(_Parent3);
+
+  console.log('继承传递参数', new _Child());
 }
 
 /***/ }),
