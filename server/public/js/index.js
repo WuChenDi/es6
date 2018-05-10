@@ -9632,10 +9632,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 332 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
+throw new Error("Module build failed: SyntaxError: D:/GitHub/es6/app/js/lottery/timer.js: \"now\" is read-only\n\n  3 |     const now = new Date().getTime();\n  4 |     const self = this;\n> 5 |     if (now = end) {\n    |         ^\n  6 |       handle.call(self);\n  7 |     } else {\n  8 |       let last_time = end - now;\n");
 
 /***/ }),
 /* 333 */
