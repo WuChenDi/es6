@@ -4026,6 +4026,40 @@ __webpack_require__(128);
   });
 }
 
+{
+  var _ajax = function _ajax() {
+    console.log('执行2');
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve();
+      }, 1000);
+    });
+  };
+  _ajax().then(function () {
+    console.log('Promise', 'timeout2');
+  });
+}
+
+{
+  var _ajax2 = function _ajax2() {
+    console.log('执行3');
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve();
+      }, 1000);
+    });
+  };
+  _ajax2().then(function () {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve();
+      }, 2000);
+    });
+  }).then(function () {
+    console.log('timeout3');
+  });
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
