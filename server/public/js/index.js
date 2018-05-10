@@ -4125,7 +4125,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     },
     age: function age(val) {
       return typeof val === 'number' && val > 18;
-    }
+    },
+    mobile: function mobile(val) {}
   };
 
   var Person = function Person(name, age) {
@@ -4133,6 +4134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     this.name = name;
     this.age = age;
+    this.mobile = '1111';
     return validator(this, personValidators);
   };
 

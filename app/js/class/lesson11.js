@@ -107,12 +107,16 @@
     },
     age(val) {
       return typeof val === 'number' && val > 18
+    },
+    mobile(val){
+      
     }
   }
   class Person {
     constructor(name, age) {
       this.name = name;
       this.age = age;
+      this.mobile = '1111';
       return validator(this,personValidators)
     }
   }
