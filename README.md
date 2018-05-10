@@ -2,7 +2,7 @@
 
 - Study es6
 
-## 项目运行
+## 项目运行（3000）
 通过npm安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/en/))
 
 ```
