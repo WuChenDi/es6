@@ -40,14 +40,38 @@
     });
   };
   ajax()
-  .then(function () {
+    .then(function () {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve()
+        }, 2000);
+      });
+    })
+    .then(function () {
+      console.log('timeout3');
+    })
+}
+
+{
+  let ajax = function (num) {
+    console.log('执行4');
     return new Promise(function (resolve, reject) {
-      setTimeout(function () {
+      if (num > 5) {
         resolve()
-      }, 2000);
-    });
-  })
-  .then(function () {
-    console.log('timeout3');
-  })
+      } else {
+        throw new Error('出错了')
+      }
+    })
+  }
+  ajax(6).then(function () {
+    console.log('log', 6);
+  }).catch(function (err) {
+    console.log('catch', err);
+  });
+
+  ajax(3).then(function () {
+    console.log('log', 3);
+  }).catch(function (err) {
+    console.log('catch', err);
+  });
 }

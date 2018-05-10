@@ -4060,6 +4060,30 @@ __webpack_require__(128);
   });
 }
 
+{
+  var _ajax3 = function _ajax3(num) {
+    console.log('执行4');
+    return new Promise(function (resolve, reject) {
+      if (num > 5) {
+        resolve();
+      } else {
+        throw new Error('出错了');
+      }
+    });
+  };
+  _ajax3(6).then(function () {
+    console.log('log', 6);
+  }).catch(function (err) {
+    console.log('catch', err);
+  });
+
+  _ajax3(3).then(function () {
+    console.log('log', 3);
+  }).catch(function (err) {
+    console.log('catch', err);
+  });
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
