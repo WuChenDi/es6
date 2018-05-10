@@ -4006,11 +4006,25 @@ __webpack_require__(128);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
 // Promise
 // 什么是异步
 // Promise的作用
 // Promise的基本用法
 
+{
+  // 基本定义
+  var ajax = function ajax(callback) {
+    console.log('执行');
+    setTimeout(function () {
+      callback && callback.call();
+    }, 1000);
+  };
+  ajax(function () {
+    console.log('timeout1');
+  });
+}
 
 /***/ }),
 /* 128 */
