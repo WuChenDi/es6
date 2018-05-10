@@ -4008,6 +4008,8 @@ __webpack_require__(128);
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
@@ -4085,6 +4087,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }(_Parent3);
 
   console.log('继承传递参数', new _Child('hello'));
+}
+
+{
+  // getter, setter
+  var _Parent5 = function () {
+    function _Parent5() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'wcd';
+
+      _classCallCheck(this, _Parent5);
+
+      this.name = name;
+    }
+    // 这里是属性，不是方法
+
+
+    _createClass(_Parent5, [{
+      key: 'longName',
+      get: function get() {
+        return 'yx' + this.name;
+      },
+      set: function set(value) {
+        this.name = value;
+      }
+    }]);
+
+    return _Parent5;
+  }();
+
+  var v = new _Parent5();
+  console.log('getter', v.longName);
 }
 
 /***/ }),

@@ -41,3 +41,21 @@
   }
   console.log('继承传递参数', new Child('hello'));
 }
+
+{
+  // getter, setter
+  class Parent {
+    constructor(name = 'wcd') {
+      this.name = name;
+    }
+    // 这里是属性，不是方法
+    get longName() {
+      return 'yx' + this.name
+    }
+    set longName(value) {
+      this.name = value;
+    }
+  }
+  let v = new Parent();
+  console.log('getter', v.longName);
+}
