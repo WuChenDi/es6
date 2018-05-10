@@ -4074,6 +4074,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }
 }
 
+{
+  var _arr = ['hello', 'world'];
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = _arr[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var value = _step2.value;
+
+      console.log('value', value);
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+}
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {

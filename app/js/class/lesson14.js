@@ -41,3 +41,10 @@
     console.log(key);
   }
 }
+
+{
+  let arr = ['hello', 'world'];
+  for (let value of arr) {
+    console.log('value', value);
+  }
+}
