@@ -36,7 +36,8 @@
   class Child extends Parent {
     constructor(name = 'child') {
       super(name);
+      this.type = 'child';
     }
   }
-  console.log('继承传递参数', new Child());
+  console.log('继承传递参数', new Child('hello'));
 }

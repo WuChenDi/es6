@@ -4075,13 +4075,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _classCallCheck(this, _Child);
 
-      return _possibleConstructorReturn(this, (_Child.__proto__ || Object.getPrototypeOf(_Child)).call(this, name));
+      var _this2 = _possibleConstructorReturn(this, (_Child.__proto__ || Object.getPrototypeOf(_Child)).call(this, name));
+
+      _this2.type = 'child';
+      return _this2;
     }
 
     return _Child;
   }(_Parent3);
 
-  console.log('继承传递参数', new _Child());
+  console.log('继承传递参数', new _Child('hello'));
 }
 
 /***/ }),
