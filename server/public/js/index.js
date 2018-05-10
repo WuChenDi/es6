@@ -4006,11 +4006,20 @@ __webpack_require__(128);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
 // Iterator和for...of循环
 // 什么是Iterator接口
 // Iterator的基本用法
 // for...of
 
+{
+  var arr = ['hello', 'world'];
+  var map = arr[Symbol.iterator]();
+  console.log(map.next());
+  console.log(map.next());
+  console.log(map.next());
+}
 
 /***/ }),
 /* 128 */
