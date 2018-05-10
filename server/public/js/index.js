@@ -4006,50 +4006,8 @@ __webpack_require__(128);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+// Decorator(3-18)
 
-
-// generator(3-17)
-
-
-// Generator
-// 基本概念
-// next函数的用法
-// yield*的语法
-
-// generator（生成器）是ES6标准引入的新的数据类型。一个generator看上去像一个函数，但可以返回多次。
-
-{
-  // genertaor基本定义
-  var tell = /*#__PURE__*/regeneratorRuntime.mark(function tell() {
-    return regeneratorRuntime.wrap(function tell$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return 'a';
-
-          case 2:
-            _context.next = 4;
-            return 'b';
-
-          case 4:
-            return _context.abrupt('return', 'c');
-
-          case 5:
-          case 'end':
-            return _context.stop();
-        }
-      }
-    }, tell, this);
-  });
-
-  var k = tell();
-
-  console.log(k.next());
-  console.log(k.next());
-  console.log(k.next());
-  console.log(k.next());
-}
 
 /***/ }),
 /* 128 */

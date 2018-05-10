@@ -12,6 +12,7 @@
 // import './class/lesson12';
 // import './class/lesson13';
 // import './class/lesson14';
-import './class/lesson15';
+// import './class/lesson15';
+import './class/lesson16';
 
 import 'babel-polyfill';
