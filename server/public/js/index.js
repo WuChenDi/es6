@@ -4117,6 +4117,54 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   var v = new _Parent5();
   console.log('getter', v.longName);
+  v.longName = 'hello';
+  console.log('setter', v.longName);
+}
+
+{
+  // 静态方法
+  var _Parent6 = function () {
+    function _Parent6() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'wcd';
+
+      _classCallCheck(this, _Parent6);
+
+      this.name = name;
+    }
+
+    _createClass(_Parent6, null, [{
+      key: 'tell',
+      value: function tell() {
+        console.log('tell');
+      }
+    }]);
+
+    return _Parent6;
+  }();
+
+  _Parent6.tell();
+}
+
+{
+  // 静态属性
+  var _Parent7 = function () {
+    function _Parent7() {
+      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'wcd';
+
+      _classCallCheck(this, _Parent7);
+
+      this.name = name;
+    }
+
+    _createClass(_Parent7, null, [{
+      key: 'tell',
+      value: function tell() {
+        console.log('tell');
+      }
+    }]);
+
+    return _Parent7;
+  }();
 }
 
 /***/ }),

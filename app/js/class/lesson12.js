@@ -58,4 +58,31 @@
   }
   let v = new Parent();
   console.log('getter', v.longName);
+  v.longName = 'hello';
+  console.log('setter', v.longName);
+}
+
+{
+  // 静态方法
+  class Parent {
+    constructor(name = 'wcd') {
+      this.name = name;
+    }
+    static tell() {
+      console.log('tell');
+    }
+  }
+  Parent.tell();
+}
+
+{
+  // 静态属性
+  class Parent {
+    constructor(name = 'wcd') {
+      this.name = name;
+    }
+    static tell() {
+      console.log('tell');
+    }
+  }
 }
