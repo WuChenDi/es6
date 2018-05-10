@@ -103,19 +103,3 @@
     loadImg('http://i2.muimg.com/567751/5eb8190d6b2a1c9c.png')
   ]).then(showImgs)
 }
-
-{
-  // 有一个图片加载完就添加到页面
-  function loadImg(src) {
-    return new Promise((resolve, reject) => {
-      let img = document.createElement('img');
-      img.src = src;
-      img.onload = function () {
-        resolve(img);
-      }
-      img.onerror = function (err) {
-        reject(err);
-      }
-    })
-  }
-}
