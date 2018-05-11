@@ -15,4 +15,4 @@ gulp --watch
 ```
 
 ## 项目效果图
-<img src="https://raw.githubusercontent.com/WuChenDi/es6/master/screenshots/index.png" width="1810" height="768"/>
+<img src="https://raw.githubusercontent.com/WuChenDi/es6/master/screenshots/index.png" width="1349" height="668"/>
