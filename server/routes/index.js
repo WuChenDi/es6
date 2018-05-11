@@ -43,6 +43,17 @@ var makeIssue = function () {
     end_time = first_issue_date.getTime();
     cur_issue = [first_issue_date.getFullYear(), ('0' + (first_issue_date.getMonth() + 1)).slice(-2), ('0' + first_issue_date.getDate()).slice(-2), '01'].join('')
   }
+  var cur_date = new Date();
+  if (end_time - cur_date.getTime() > 1000 * 60 * 2) {
+    state = '正在销售'
+  } else {
+    state = '开奖中'
+  }
+  return {
+    issue: cur_issue,
+    state: state,
+    end_time: end_time
+  }
 }
 
 module.exports = router;
