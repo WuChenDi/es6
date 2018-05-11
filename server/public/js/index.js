@@ -20233,11 +20233,11 @@ var Calculate = function () {
      * @param  {string} play_name [当前的玩法标识]
      * @return {number}           [注数]
      */
-    value: function computeCount(active, paly_name) {
+    value: function computeCount(active, play_name) {
       var count = 0;
-      var exist = this.play_list.has(paly_name);
+      var exist = this.play_list.has(play_name);
       var arr = new Array(active).fill('0');
-      if (exist && paly_name.at(0) === 'r') {
+      if (exist && play_name.at(0) === 'r') {
         count = Calculate.combine(arr, play_name.split('')[1]).length;
       }
       return count;
@@ -20247,12 +20247,12 @@ var Calculate = function () {
      * [computeBonus 奖金范围预测]
      * @param  {number} active    [当前选中的号码]
      * @param  {string} play_name [当前的玩法标识]
-     * @return {array}            [奖金范围]
+     * @return {array}           [奖金范围]
      */
 
   }, {
     key: 'computeBonus',
-    value: function computeBonus(active, paly_name) {
+    value: function computeBonus(active, play_name) {
       var play = play_name.split('');
       var self = this;
       var arr = new Array(play[1] * 1).fill(0);
@@ -20265,7 +20265,7 @@ var Calculate = function () {
             arr = new Array(min_active).fill(0);
             min = Calculate.combine(arr, play[1]).length;
           } else {
-            if (play[i] - 5 > 0 && active - play[1] >= 0) {
+            if (play[1] - 5 > 0 && active - play[1] >= 0) {
               arr = new Array(active - 5).fill(0);
               min = Calculate.combine(arr, play[1] - 5).length;
             } else {
@@ -20275,6 +20275,7 @@ var Calculate = function () {
         } else {
           min = active - play[1] > -1 ? 1 : 0;
         }
+
         var max_active = Math.min(active, 5);
         if (play[1] - 5 > 0) {
           if (active - play[1] >= 0) {
@@ -20283,9 +20284,9 @@ var Calculate = function () {
           } else {
             max = 0;
           }
-        } else if (paly[1] - 5 < 0) {
+        } else if (play[1] - 5 < 0) {
           arr = new Array(Math.min(active, 5)).fill(0);
-          max = Calculate.combine(arr, play[1].length);
+          max = Calculate.combine(arr, play[1]).length;
         } else {
           max = 1;
         }
@@ -20314,14 +20315,14 @@ var Calculate = function () {
         if (size === arrLen) {
           allResult.push([].concat(result, arr));
         } else {
-          for (var _i = 0; _i < arrLen; _i++) {
+          for (var i = 0; i < arrLen; i++) {
             var newResult = [].concat(result);
-            newResult.push(arr[_i]);
+            newResult.push(arr[i]);
             if (size === 1) {
               allResult.push(newResult);
             } else {
               var newArr = [].concat(arr);
-              newArr.splice(0, _i + 1);
+              newArr.splice(0, i + 1);
               f(newArr, size - 1, newResult);
             }
           }
