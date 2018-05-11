@@ -20327,6 +20327,7 @@ var Calculate = function () {
           }
         }
       })(arr, size, []);
+      return allResult;
     }
   }]);
 

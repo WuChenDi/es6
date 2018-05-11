@@ -91,6 +91,7 @@ class Calculate {
         }
       }
     })(arr, size, [])
+    return allResult
   }
 }
 
