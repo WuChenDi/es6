@@ -2,7 +2,7 @@ class Timer {
   countdown(end, update, handle) {
     const now = new Date().getTime();
     const self = this;
-    if (now = end) {
+    if (now - end > 0) {
       handle.call(self);
     } else {
       let last_time = end - now;
@@ -30,7 +30,7 @@ class Timer {
       if (d > 0) {
         r.push(`<em>${d}</em>天`);
       }
-      if (r.length || (H > 0)) {
+      if (r.length || (h > 0)) {
         r.push(`<em>${h}</em>时`);
       }
       if (r.length || m > 0) {

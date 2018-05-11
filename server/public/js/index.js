@@ -14006,6 +14006,27 @@ var _lottery2 = _interopRequireDefault(_lottery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import './class/lesson1';
+// import './class/lesson2';
+// import './class/lesson3';
+// import './class/lesson4';
+// import './class/lesson5';
+// import './class/lesson6';
+// import './class/lesson7';
+// import './class/lesson8';
+// import './class/lesson9';
+// import './class/lesson10';
+// import './class/lesson11';
+// import './class/lesson12';
+// import './class/lesson13';
+// import './class/lesson14';
+// import './class/lesson15';
+// import './class/lesson16';
+
+var syy = new _lottery2.default();
+
+console.log(syy);
+
 /***/ }),
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -20109,9 +20130,79 @@ exports.default = Base;
 
 /***/ }),
 /* 333 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: D:/GitHub/es6/app/js/lottery/timer.js: \"now\" is read-only\n\n  3 |     const now = new Date().getTime();\n  4 |     const self = this;\n> 5 |     if (now = end) {\n    |         ^\n  6 |       handle.call(self);\n  7 |     } else {\n  8 |       let last_time = end - now;\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Timer = function () {
+  function Timer() {
+    _classCallCheck(this, Timer);
+  }
+
+  _createClass(Timer, [{
+    key: 'countdown',
+    value: function countdown(end, update, handle) {
+      var now = new Date().getTime();
+      var self = this;
+      if (now - end > 0) {
+        handle.call(self);
+      } else {
+        var last_time = end - now;
+        /**
+         * px_d 天
+         * px_h 小时
+         * px_m 分钟
+         * px_s 秒
+         */
+        var px_d = 1000 * 60 * 60 * 24;
+        var px_h = 1000 * 60 * 60;
+        var px_m = 1000 * 60;
+        var px_s = 1000;
+        /**
+         * d  剩余天数
+         * h  剩余小时
+         * m  剩余分钟
+         * s  剩余秒
+         */
+        var d = Math.floor(last_time / px_d);
+        var h = Math.floor((last_time - d * px_d) / px_h);
+        var m = Math.floor((last_time - d * px_d - h * px_h) / px_m);
+        var s = Math.floor((last_time - d * px_d - h * px_h - m * px_m) / px_s);
+        var r = [];
+        if (d > 0) {
+          r.push('<em>' + d + '</em>\u5929');
+        }
+        if (r.length || h > 0) {
+          r.push('<em>' + h + '</em>\u65F6');
+        }
+        if (r.length || m > 0) {
+          r.push('<em>' + m + '</em>\u5206');
+        }
+        if (r.length || s > 0) {
+          r.push('<em>' + s + '</em>\u79D2');
+        }
+        self.last_time = r.join('');
+        update.call(self, r.join(''));
+        setTimeout(function () {
+          self.countdown(end, update, handle);
+        }, 1000);
+      }
+    }
+  }]);
+
+  return Timer;
+}();
+
+exports.default = Timer;
 
 /***/ }),
 /* 334 */
