@@ -56,4 +56,30 @@ var makeIssue = function () {
   }
 }
 
+// 获取遗漏数据
+router.get('/get/omit', function (req, res, next) {
+  res.json(mockjs.mock({
+    'data|11': [/[1-9]{1,3}|0/],
+    'issue': /[1-9]{8}/
+  }))
+})
+
+// 获取开奖号码
+router.get('/get/opencode', function (req, res, next) {
+  var issue = makeIssue().issue;
+  var data = mockjs.mock({
+    'data': [/[1-3]/, /[4-5]/, /[6-7]/, /[8-9]/, /1[0-1]/]
+  }).data;
+  res.json({
+    issue: issue,
+    data: data
+  })
+})
+
+// 获取当前状态
+router.get('/get/state/', function (req, res, next) {
+  var state = makeIssue();
+  res.json(state);
+})
+
 module.exports = router;
