@@ -1,18 +1,22 @@
 // let const
+// es6强制开启严格模式
+// es5开启严格模式要添加 "use strict"
 
 function test() {
-  // let 块级作用域
-  // for (let i = 1; i < 3; i++) {
-  //   console.log(i);
-  // }
-  // console.log(i);
-
+  // Duplicate declaration "a" 
   // let不允许在相同作用域内重复声明同一个变量，即同一个作用域内不允许出现名称相同的变量。
-  // let a = 1;
+  let a = 1;
   // let a = 2;
+  console.log(a);
 }
 
-// test();
+function test1() {
+  // 块作用域
+  for (let i = 1; i < 3; i++) {
+    console.log(i);
+  }
+  // console.log(i);
+}
 
 function last() {
   // const用于声明常量，一旦声明，必须立即赋值，且以后不可更改。
@@ -27,4 +31,6 @@ function last() {
   console.log(PI, k);
 }
 
+test();
+test1();
 last();
